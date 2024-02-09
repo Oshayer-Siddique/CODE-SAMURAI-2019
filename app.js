@@ -58,21 +58,17 @@ const userRouter = require("./router/userRouter");
 const stationRouter = require("./router/stationRouter");
 const walletRouter = require("./router/walletRouter");
 const trainRouter = require("./router/trainRouter");
-
-
-
-
+const ticketRouter = require("./router/ticketRouter");
+const routesRouter = require("./router/routesRouter");
 
 
 //app.use('/',firstRouter);
 app.use('/api/users',userRouter);
-app.use('/api/wallet',walletRouter);
+app.use('/api/wallets',walletRouter);
 app.use('/api/stations',stationRouter);
 app.use('/api/trains', trainRouter);
-
-
-
-
+app.use('/api/tickets', ticketRouter);
+app.use('/api/routes', routesRouter);
 
 
 // Start the server on port 3000
