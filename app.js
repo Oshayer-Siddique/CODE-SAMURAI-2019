@@ -63,6 +63,7 @@ app.get('/', (req, res) => {
 const userRouter = require("./router/userRouter");
 const stationRouter = require("./router/stationRouter");
 const walletRouter = require("./router/walletRouter");
+const trainRouter = require("./router/trainRouter");
 
 
 
@@ -73,6 +74,7 @@ const walletRouter = require("./router/walletRouter");
 app.use('/api/users',userRouter);
 app.use('/api/wallet',walletRouter);
 app.use('/api/stations',stationRouter);
+app.use('/api/trains', trainRouter);
 
 
 
