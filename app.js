@@ -23,28 +23,28 @@ app.use(bodyParser.json());
 
 //for locallly mongodb   mongodb://127.0.0.1:27017/Code_samurai_2024_preli
 //const mongourl = "mongodb+srv://oshayersiddique2001:RNiWO88iayIwaFfG@cluster0.c38r7eo.mongodb.net/"
-// const mongourl = "mongodb://127.0.0.1:27017/Code_samurai_2024_preli";
+const mongourl = "mongodb://127.0.0.1:27017/Code_samurai_2024_preli";
 
 
-// mongoose
-//   .connect(mongourl, {
-//     //useNewUrlParser: true,
-//     //useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log("Connected to MongoDB");
-//   })
-//   .catch((error) => {
-//     console.error("Error connecting to MongoDB:", error);
-//   });
-
-
-  mongoose.connect('mongodb://localhost:27017/mydatabase', {
+mongoose
+  .connect(mongourl, {
     //useNewUrlParser: true,
-    //useUnifiedTopology: true
+    //useUnifiedTopology: true,
   })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
+  });
+
+
+  // mongoose.connect('mongodb://localhost:27017/mydatabase', {
+  //   //useNewUrlParser: true,
+  //   //useUnifiedTopology: true
+  // })
+  // .then(() => console.log('MongoDB connected'))
+  // .catch(err => console.error('MongoDB connection error:', err));
 
 
   app.use(cookieParser());
