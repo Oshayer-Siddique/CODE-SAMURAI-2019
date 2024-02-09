@@ -13,7 +13,7 @@ const path = require('path');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 
 // Creating an Express application
 const port = 8000;
