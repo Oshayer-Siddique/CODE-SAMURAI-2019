@@ -14,7 +14,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 
 // Creating an Express application
-const port = 4000;
+const port = 8000;
 const app = express();
 
 //for locallly mongodb   mongodb://127.0.0.1:27017/Code_samurai_2024_preli
