@@ -34,11 +34,25 @@ mongoose
   });
 
 
+  app.use(cookieParser());
+  app.use(express.urlencoded({ extended: true }));
+
+
 
 // Define a route
 app.get('/', (req, res) => {
   res.send("<h2>Hello Mehnaz LLL Oshayer hello Areeb</h2>");
 });
+
+const firstRouter = require('./router/firstrouter');
+
+
+
+
+
+
+
+//app.use('/',firstRouter);
 
 
 
