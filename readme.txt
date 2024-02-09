@@ -11,3 +11,4 @@ Islamic University of Technology, Gazipur
 
 https://github.com/Oshayer-Siddique/CODE-SAMURAI-2024-preli/tree/main
 
+If the online database doesn't work, use the localhost one that is commented out above that.
