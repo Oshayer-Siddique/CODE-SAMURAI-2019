@@ -67,18 +67,11 @@ const trainRouter = require("./router/trainRouter");
 
 
 
-
-
-
 //app.use('/',firstRouter);
 app.use('/api/users',userRouter);
 app.use('/api/wallet',walletRouter);
 app.use('/api/stations',stationRouter);
 app.use('/api/trains', trainRouter);
-
-
-
-
 
 
 // Start the server on port 3000
