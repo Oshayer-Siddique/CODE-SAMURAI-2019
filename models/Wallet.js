@@ -1,24 +1,29 @@
 const mongoose = require('mongoose');
 
-const stationSchema = new mongoose.Schema({
-  station_id: {
+const USER = require("../models/User");
+
+const walletSchema = new mongoose.Schema({
+  wallet_id: {
     type: Number,
-    required: true
+    required: true,
+
+
   },
-  station_name: {
-    type: String,
-    required: true
+  wallet_balance: {
+    type : Number,
+
+
   },
-  longitude: {
-    type: Number,
-    required: true
+  wallet_user: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'USER', 
+    required: true 
   },
-  latitude: {
-    type: Number,
-    required: true
-  }
+
+  
 });
 
-const Station = mongoose.model('Station', stationSchema);
 
-module.exports = Station;
+const Wallet = mongoose.model("Wallet", walletSchema);
+
+module.exports = Wallet;

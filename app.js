@@ -64,9 +64,9 @@ const walletRouter = require("./router/walletRouter");
 
 
 //app.use('/',firstRouter);
-app.use('/api/users',userRouter);
-app.use('/api/wallet',walletRouter);
-app.use('/api/stations',stationRouter);
+app.use('/',userRouter);
+app.use('/',walletRouter);
+app.use('/',stationRouter);
 
 
 

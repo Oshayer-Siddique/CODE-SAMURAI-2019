@@ -7,6 +7,7 @@ const path = require("path");
 const fs = require("fs");
 
 const USER = require("../models/User");
+const WALLET = require("../models/Wallet");
 
 async function adduser(req,res,next){
     const{user_id,user_name,balance} = req.body;
@@ -14,7 +15,10 @@ async function adduser(req,res,next){
         user_id,
         user_name,
         balance,
-    })
+    });
+    const newWallet = await WALLET.create({ wallet_id: newUser.user_id, wallet_user: newUser._id });
+    newUser.wallet = newWallet._id;
+
 
     await newUser.save();
     res.send(req.body);
