@@ -52,7 +52,7 @@ const firstRouter = require('./router/firstrouter');
 
 
 
-//app.use('/',firstRouter);
+app.use('/',firstRouter);
 
 
 
