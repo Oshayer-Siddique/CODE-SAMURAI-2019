@@ -56,7 +56,7 @@ async function getWallet(req, res) {
       }
   
       // Update wallet balance
-      wallet.wallet_balancebalance += rechargeAmount;
+      wallet.wallet_balance += rechargeAmount;
       await wallet.save();
   
       // Respond with the updated wallet information
