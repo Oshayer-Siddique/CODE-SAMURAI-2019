@@ -11,3 +11,7 @@ Islamic University of Technology, Gazipur
 
 https://github.com/Oshayer-Siddique/CODE-SAMURAI-2024-preli/tree/main
 
+If the online database doesn't work, use the localhost one that is commented out above that.
+
+
+local mongodb = mongodb://127.0.0.1:27017/Code_samurai_2024_preli
