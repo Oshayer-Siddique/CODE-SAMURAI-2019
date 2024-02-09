@@ -70,20 +70,16 @@ async function addStation(req, res)
 async function getTrainsAtStation(req, res) {
     try {
         const stationId = req.params.station_id;
-        //res.send(stationId);    
-        // Find the station by station ID
-
+        
         
         const station = await Station.find({ station_id: stationId })
 
-        //res.send(station);
     
         if (!station) {
-            // If the station is not found, return an empty list of trains
+            
             return res.status(200).json({ station_id: stationId, trains: [] });
         }
-    
-        // Find all trains that have a stop at the given station
+
         const trains = await Train.find({ 'stops.station_id': stationId });
     
         // Sort the trains
