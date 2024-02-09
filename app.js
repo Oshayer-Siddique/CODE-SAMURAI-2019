@@ -4,63 +4,49 @@ const express = require('express');
 const csv = require('csv-parser');
 const fs = require('fs');
 
+const mongoose = require("mongoose");
+
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
+const multer = require('multer');
 const path = require('path');
+const dotenv = require('dotenv');
+const cors = require('cors');
 
 // Creating an Express application
+const port = 4000;
 const app = express();
 
+//for locallly mongodb   mongodb://127.0.0.1:27017/Code_samurai_2024_preli
+const mongourl = "mongodb+srv://oshayersiddique2001:RNiWO88iayIwaFfG@cluster0.c38r7eo.mongodb.net/"
 
 
-
-function readCSVData(filePath, callback) {
-  const data = [];
-
-  const stream = fs.createReadStream(filePath)
-    .pipe(csv());
-
-  stream.on('data', (row) => {
-    // Process each row of data
-    data.push(row);
+mongoose
+  .connect(mongourl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
   });
 
-  stream.on('end', () => {
-    // This is called when all data has been read
-    console.log('CSV file successfully processed.');
-    callback(null, data);
-  });
-
-  stream.on('error', (error) => {
-    // Handle errors during the CSV parsing or file reading process
-    console.error('Error reading CSV file:', error.message);
-    callback(error, null);
-  });
-}
 
 
 // Define a route
 app.get('/', (req, res) => {
-  res.send("<h2>Hello Mehnaz LLL Oshayer</h2>");
+  res.send("<h2>Hello Mehnaz LLL Oshayer hello</h2>");
 });
 
 
 
 
-app.get('/api/data',(req,res) => {
-  const csvfilePath = 'datasets/Roadmap-Dhaka.csv';
 
-  readCSVData(csvfilePath,(error,data) =>{
-    if(error){
-      res.status(500).send("Server Error");
-    }
-    else{
-      res.json(data);
-    }
-  })
-}
-)
 
 // Start the server on port 3000
-const port = 4000;
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
