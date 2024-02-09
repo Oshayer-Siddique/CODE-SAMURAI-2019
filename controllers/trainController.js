@@ -31,13 +31,13 @@ async function addTrain(req, res) {
 
       await Train.create(req.body);
   
-      const serviceStart = stops[0].departure_time;
-      const serviceEnd = stops[stops.length - 1].arrival_time;
+      const service_start = stops[0].departure_time;
+      const service_ends = stops[stops.length - 1].arrival_time;
   
-      const numStations = stops.length;
+      const num_stations = stops.length;
       
   
-      res.status(201).json({train_id, train_name, capacity, serviceStart, serviceEnd, numStations}); // Send back the saved train object
+      res.status(201).json({train_id, train_name, capacity, service_start, service_ends, num_stations}); // Send back the saved train object
     } catch (error) {
       console.error('Error adding train:', error);
       res.status(500).json({ error: 'Failed to add train' });

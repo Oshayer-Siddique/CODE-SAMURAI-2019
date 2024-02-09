@@ -17,8 +17,17 @@ async function getStation(req,res)
     try {
       // Fetch all stations from the database
       const stations = await Station.find();
+
+      const response = {
+        stations: stations.map(station => ({
+          station_id: station.station_id,
+          station_name: station.station_name,
+          longitude: station.longitude,
+          latitude: station.latitude
+        }))
+      };
   
-      res.status(200).json(stations); // Send back the list of stations
+      res.status(200).json(response); // Send back the list of stations
     } catch (error) {
       console.error('Error fetching stations:', error);
       res.status(500).json({ error: 'Failed to fetch stations' });
@@ -42,8 +51,14 @@ async function addStation(req, res)
       
         // Save the station to the database
         const savedStation = await newStation.save();
+        const response = {
+          station_id: savedStation.station_id,
+          station_name: savedStation.station_name,
+          longitude: savedStation.longitude,
+          latitude: savedStation.latitude
+        };
       
-        res.status(201).json(savedStation); // Send back the saved station object
+        res.status(201).json(response); // Send back the saved station object
         
     } catch (error) {
         console.error('Error adding station:', error);
