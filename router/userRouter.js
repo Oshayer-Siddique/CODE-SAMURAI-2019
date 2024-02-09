@@ -4,8 +4,9 @@ const router = express.Router();
 
 const {adduser} = require('../controllers/UserController');
 
-router.post('/api/users',adduser);
 
+
+router.post('/',adduser);
 
 
 module.exports = router;
