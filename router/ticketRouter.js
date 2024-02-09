@@ -1,9 +1,9 @@
-const express = require('express')
+const express = require('express');
 
 const router = express.Router();
 
-//const {addTrain, getTrain} = require("../controllers/trainController")
-//router.post('/', addTrain);
+const {createTicket} = require("../controllers/ticketController")
+router.post('/', createTicket);
 //router.get('/', getTrain);
 
 
