@@ -64,7 +64,7 @@ const routesRouter = require("./router/routesRouter");
 
 //app.use('/',firstRouter);
 app.use('/api/users',userRouter);
-app.use('/api/wallets',walletRouter);
+app.use('/',walletRouter);
 app.use('/api/stations',stationRouter);
 app.use('/api/trains', trainRouter);
 app.use('/api/tickets', ticketRouter);
