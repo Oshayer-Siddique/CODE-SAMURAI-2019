@@ -13,9 +13,13 @@ const path = require('path');
 const dotenv = require('dotenv');
 const cors = require('cors');
 
+const bodyParser = require('body-parser');
+
 // Creating an Express application
 const port = 8000;
 const app = express();
+
+app.use(bodyParser.json());
 
 //for locallly mongodb   mongodb://127.0.0.1:27017/Code_samurai_2024_preli
 //const mongourl = "mongodb+srv://oshayersiddique2001:RNiWO88iayIwaFfG@cluster0.c38r7eo.mongodb.net/"
@@ -59,8 +63,6 @@ app.get('/', (req, res) => {
 const userRouter = require("./router/userRouter");
 const stationRouter = require("./router/stationRouter");
 const walletRouter = require("./router/walletRouter");
-
-
 
 
 

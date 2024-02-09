@@ -11,8 +11,8 @@ var first_data;
 
 async function postfirst(req,res,next){
     const {name} = req.body;
-    first_data = name;
-    res.send(first_data);
+    
+    res.send(JSON.stringify(req.body));
 
 }
 
